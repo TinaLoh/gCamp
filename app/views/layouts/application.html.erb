@@ -8,24 +8,25 @@
 </head>
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
-      <a class="navbar-brand" href="#">gCamp</a>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <a class="navbar-brand" href="/">gCamp</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-body">
+       <%= yield %>
+     </div>
+     <div class="panel-footer">
+       <u><%= link_to 'About', about_path %></u> <u><%= link_to 'Terms', terms_path %></u>
+     </div>
+    </div>
   </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-      </ul> -->
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
 
-<!-- <div class="container">
-  <div class="jumbotron"><h1> </h1></div> -->
-<div class="container">
-  <%= yield %>
-</div>
 
-<!-- </div> -->
 </body>
 </html>
