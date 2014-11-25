@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :tasks
+
   root 'welcome#home'
 
-  get 'about' => 'pages#about'
-  get 'terms' => 'pages#terms'
+  get 'about'     => 'pages#about'
+  get 'terms'     => 'pages#terms'
+  get 'faq'      => 'pages#faq'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

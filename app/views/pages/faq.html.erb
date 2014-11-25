@@ -1,0 +1,12 @@
+<h1>Frequently Asked Questions</h1><br><br><br>
+
+
+
+
+  <% @paragraphs.each do |paragraph| %>
+  <br>
+  <p><h4><%= paragraph.question %></h4></p>
+  <br>
+  <p><%= paragraph.answer %></p>
+  <br>
+  <% end %>

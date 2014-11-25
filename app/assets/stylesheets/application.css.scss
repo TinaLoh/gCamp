@@ -46,3 +46,18 @@ body {
 blockquote {
   border-left: none;
 }
+
+table {
+
+  td:first-of-type {
+    min-width: 200px;
+  }
+
+  td:not(:first-of-type) {
+    padding-right: 20px;
+  }
+}
+
+a {
+  text-decoration: underline;
+}
