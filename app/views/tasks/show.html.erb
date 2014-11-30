@@ -1,9 +1,26 @@
-<p id="notice"><%= notice %></p>
+<!-- if task has been created or updated -->
+
+<% if notice %>
+  <div id="notice" class="alert alert-success text-center" role="alert"><%= notice %></div>
+<% end %>
+
+<!-- else -->
+<!-- <p id="notice"><%= notice %></p> -->
 
 <p>
   <strong>Description:</strong>
   <%= @task.description %>
 </p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @task.completed %>
+</p>
+
+
+<br>
+<br>
+
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

@@ -1,6 +1,6 @@
-<%= form_for(@task) do |f| %>
+<%= form_for(@task, :html => { :class => 'form-horizontal' }) do |f| %>
   <% if @task.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-success col-sm-offset-2">
       <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
       <ul>
@@ -11,13 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+
+  <div class="form-group">
+    <%= f.label :description, class: "col-sm-1 control-label" %>
+    <div class="col-sm-5">
+    <%= f.text_field :description, class: "form-control" %>
+    </div>
+  </div>  
+
+  <div class="form-group">
+    <%= f.label :due_date, class: "col-sm-1 control-label" %>
+    <div class="col-sm-5">
+      <%= f.text_field :due_date, class: "form-control" %>
+    </div>
   </div>
-  <br>
+
+<br>
+<br>
+<br>
+
+<div class="form-group">
+  <div class="col-sm-2 col-sm-offset-2">
+    <div class="checkbox"
+    <label><%= f.check_box :completed %></label>
+    <%= f.label :completed %>
+  </div>
+</div>
+</div>
+
+  <div class="form-group"
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit  class:"btn btn-primary col-sm-offset-2" %>
+    <%= link_to "cancel", tasks_path, class:"btn btn-default"%>
   </div>
-  <br>
+</div>
+
 <% end %>
