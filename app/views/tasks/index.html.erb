@@ -1,8 +1,9 @@
 <div class="page-header">
   <div class="pull-right">
-    <%= link_to 'New Task', new_task_path, class:"btn btn-info" %>
+    <%= link_to 'All', tasks_path %>  &nbsp; | &nbsp; <%= link_to 'Incomplete', tasks_path(:completed=>"false") %>
+    &nbsp; <%= link_to 'New Task', new_task_path, class:"btn btn-info" %>
   </div>
-<h1>Tasks</h1>
+  <h1>Tasks</h1>
 </div>
 
 <table class = "table">
@@ -18,14 +19,14 @@
   <tbody>
 
     <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.description %></td>
-        <td><%= task.completed %></td>
-        <td><%= task.due_date %></td>
-        <td><%= link_to 'Show', task, class:"btn btn-success" %></td>
-        <td><%= link_to 'Edit', edit_task_path(task), class:"btn btn-info" %></td>
-        <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
-      </tr>
+    <tr>
+      <td><%= task.description %></td>
+      <td><%= task.completed %></td>
+      <td><%= task.due_date %></td>
+      <td><%= link_to 'Show', task, class:"btn btn-success" %></td>
+      <td><%= link_to 'Edit', edit_task_path(task), class:"btn btn-info" %></td>
+      <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
