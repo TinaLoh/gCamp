@@ -1,4 +1,4 @@
-class Faq
+class Faq < ActiveRecord::Base
   attr_reader :question, :answer
 
 

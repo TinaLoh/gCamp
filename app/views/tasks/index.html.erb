@@ -1,6 +1,11 @@
 <div class="page-header">
   <div class="pull-right">
-    <%= link_to 'All', tasks_path %>  &nbsp; | &nbsp; <%= link_to 'Incomplete', tasks_path(:completed=>"false") %>
+    <% if params[:completed] == "false" %>
+    <%= link_to 'All', tasks_path %>  &nbsp; | &nbsp; Incomplete
+    <% else %>
+    All | <%= link_to 'Incomplete', tasks_path(:completed=>"false") %>
+    &nbsp;
+    <% end %>
     &nbsp; <%= link_to 'New Task', new_task_path, class:"btn btn-info" %>
   </div>
   <h1>Tasks</h1>
