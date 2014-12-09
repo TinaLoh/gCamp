@@ -32,4 +32,6 @@
   </div>
 </div>
 
+<%= link_to "Delete User", user_path(@user), method: :delete, data:{ confirm: "Are you sure?"}, class:"btn btn-danger" %>
+
 <% end %>
