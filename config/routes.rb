@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :tasks
   resources :users
+  resources :projects
 
   root 'welcome#home'
 
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   get 'faq'       =>  'pages#faq'
   get 'tasks'     =>  'tasks#index'
   get 'users'     =>  'users#index'
+  get 'projects'  =>  'projects#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
