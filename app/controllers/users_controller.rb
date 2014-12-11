@@ -10,7 +10,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+
+    if @user.valid?
+      @user.save
       redirect_to users_path, notice: "User was successfully created."
     else
       render :new
@@ -29,7 +31,11 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to users_path, notice: "User was updated."
+    if @user.valid?
+      redirect_to users_path, notice: "User was updated."
+    else
+      render :edit  
+    end
   end
 
   def destroy

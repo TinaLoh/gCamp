@@ -2,6 +2,23 @@
 
 <br>
 
+
+<% if @project.errors.any? %>
+<div class="alert alert-danger" role="alert">
+  <div id="error_explanation">
+    <h2><%= pluralize(@project.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<% end %>
+
+
+
 <%= form_for(@project, :html => { :class => 'form-horizontal' }) do |f| %>
 
 <div class="form-group">

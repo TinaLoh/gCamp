@@ -2,8 +2,24 @@
 
 <br>
 
-<%= form_for(@user, :html => { :class => 'form-horizontal' }) do |f| %>
 
+
+<% if @user.errors.any? %>
+<div class="alert alert-danger" role="alert">
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<% end %>
+
+
+<%= form_for(@user, :html => { :class => 'form-horizontal' }) do |f| %>
 <div class="form-group">
   <%= f.label :first_name, class: "col-sm-2 control-label" %>
   <div class="col-sm-5">
@@ -34,7 +50,7 @@
 
 <div class="form-group">
   <div class="col-sm-offset-2 col-sm-5 well">
-  <p class="text-center"><%= link_to "Delete User", user_path(@user), method: :delete, data:{ confirm: "Are you sure?"}, class:"btn btn-danger" %></p>
+    <p class="text-center"><%= link_to "Delete User", user_path(@user), method: :delete, data:{ confirm: "Are you sure?"}, class:"btn btn-danger" %></p>
   </div>
 </div>
 
