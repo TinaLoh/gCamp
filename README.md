@@ -1,6 +1,6 @@
 == README
 
-
+[![Build Status](https://travis-ci.org/TinaLoh/gCamp.svg?branch=master)](https://travis-ci.org/TinaLoh/gCamp)
 
 
 This README would normally document whatever steps are necessary to get the
